@@ -8,7 +8,7 @@ package com.mycompany.main;
  *
  * @author amara
  */
-public class Carro {
+public class Carro implements Cloneable{
     private String modelo;
     private String cor;
     private int ano;
@@ -20,35 +20,20 @@ public class Carro {
     }
     
     @Override
-    public CarroPrototipo clone() {
+    public Carro clone(){
         try {
-            return (CarroPrototipo) super.clone();
+            return (Carro) super.clone();
         } catch (CloneNotSupportedException e) {
-            return null;
+            throw new RuntimeException("Erro ao clonar objeto.");
         }
     }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
+    
+    public void setCor(String cor){
         this.cor = cor;
     }
 
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
+    @Override
+    public String toString() {
+        return "Carro: " + " modelo = " + modelo + ", cor = " + cor + ", ano = " + ano;
     }
 }

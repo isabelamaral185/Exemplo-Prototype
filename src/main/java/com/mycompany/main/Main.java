@@ -10,16 +10,16 @@ package com.mycompany.main;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        CarroPrototipo prototypeCar = (CarroPrototipo) new Carro("Sedan", "Preto", 2022);
-
-        CarroPrototipo car1 = prototypeCar.clone();
-        ((Carro) car1).setCor("Vermelho");
-
-        CarroPrototipo car2 = prototypeCar.clone();
-        ((Carro) car2).setAno(2023);
-
-        System.out.println("Carro 1: " + car1.toString());
-        System.out.println("Carro 2: " + car2.toString());
+    public static void main(String[] args){
+        Carro carroOriginal = new Carro("Civic", "Preto", 2024);
+        
+        Carro carroClone = (Carro) carroOriginal.clone();
+        carroClone.setCor("Branco");
+        
+        System.out.println("Original: ");
+        System.out.println(carroOriginal);
+        
+        System.out.println("\nClone: ");
+        System.out.println(carroClone);
     }
 }
